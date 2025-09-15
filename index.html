@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Great AI - Evolutional Tech</title>
+  <style>
+    /* Your existing CSS remains unchanged */
+    :root {
+      --primary-color: #007acc;
+      --secondary-color: #004e92;
+      --dark-bg: #000428;
+      --message-user: rgba(28,28,28,0.8);
+      --message-bot: rgba(0,122,204,0.8);
+      --text-light: #ffffff;
+      --text-dark: #333333;
+      --accent-color: #FF9900;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--dark-bg);
+      background: linear-gradient(to right, var(--dark-bg), var(--secondary-color));
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: var(--text-light);
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      transition: all 0.3s ease;
+    }
+
+    /* ... (rest of your CSS remains unchanged) ... */
+  </style>
+  <!-- Include config.js -->
+  <script src="config/config.js"></script>
+  <!-- Include the main script -->
+  <script src="scripts/script.js"></script>
+</head>
+<body>
+  <!-- Join Team Popup -->
+  <div id="joinModal" class="join-modal">
+    <div class="join-content">
+      <button class="join-close" id="closeJoinModal">×</button>
+      <div class="logo">𝙀𝙫𝙤𝙡𝙪𝙩𝙞𝙤𝙣𝙖𝙡 𝙏𝙚𝙘𝙝™</div>
+      <h2>JOIN OUR TEAM</h2>
+      <div class="tagline">Innovate. Create. Elevate.</div>
+      
+      <div class="leader-text">LEADERS WANTED</div>
+      
+      <p>Become part of a community that's shaping the future of technology. We're looking for passionate individuals ready to make an impact.</p>
+      
+      <div class="join-links">
+        <a href="https://whatsapp.com/channel/0029VbBNwExG3R3ZEFaWBm0H" class="join-link" target="_blank">
+          📱 WhatsApp Channel
+        </a>
+        <a href="https://chat.whatsapp.com/DJdikG7EoQ630SLeR8KBJO?mode=ac_t" class="join-link" target="_blank">
+          👥 WhatsApp Group
+        </a>
+        <a href="https://t.me/evotechomeh" class="join-link" target="_blank">
+          📢 Telegram Channel
+        </a>
+      </div>
+      
+      <p>Connect with us today and be part of something extraordinary!</p>
+    </div>
+  </div>
+
+  <!-- Personality Modal -->
+  <div id="personalityModal" class="modal">
+    <div class="modal-content">
+      <h2>Configure AI Personality</h2>
+      
+      <div class="tab-buttons">
+        <button class="tab-btn active" data-tab="presets">Presets</button>
+        <button class="tab-btn" data-tab="custom">Custom</button>
+        <button class="tab-btn" data-tab="advanced">Advanced</button>
+      </div>
+      
+      <div class="tab-content" id="presets-tab">
+        <div class="preset-grid">
+          <div class="preset-card" data-preset="professional">
+            <h3>Professional</h3>
+            <p>Formal, business-appropriate responses</p>
+          </div>
+          <div class="preset-card" data-preset="friendly">
+            <h3>Friendly</h3>
+            <p>Warm and conversational tone</p>
+          </div>
+          <div class="preset-card" data-preset="sarcastic">
+            <h3>Sarcastic</h3>
+            <p>Dry humor and witty comebacks</p>
+          </div>
+          <div class="preset-card" data-preset="concise">
+            <h3>Concise</h3>
+            <p>Brief and to-the-point answers</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="tab-content hidden" id="custom-tab">
+        <textarea id="personalityInput" placeholder="Describe in your own words..."></textarea>
+        <div class="slider-container">
+          <label>Creativity: <span id="creativityValue">50</span>%</label>
+          <input type="range" id="creativitySlider" min="0" max="100" value="50">
+        </div>
+      </div>
+      
+      <div class="tab-content hidden" id="advanced-tab">
+        <div class="toggle-container">
+          <label class="toggle-switch">
+            <input type="checkbox" id="humorToggle" checked>
+            <span class="slider"></span>
+            <span>Enable Humor</span>
+          </label>
+          <label class="toggle-switch">
+            <input type="checkbox" id="empathyToggle" checked>
+            <span class="slider"></span>
+            <span>Show Empathy</span>
+          </label>
+        </div>
+        <select id="formalitySelect">
+          <option value="casual">Casual</option>
+          <option value="neutral" selected>Neutral</option>
+          <option value="formal">Formal</option>
+        </select>
+      </div>
+      
+      <div class="modal-buttons">
+        <button id="savePersonalityBtn">Apply Personality</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Chat Interface -->
+  <div class="header">
+    <h1>Great AI</h1>
+    <p>By Evolutional Tech</p>
+    <div class="header-controls">
+      <button class="mode-toggle" id="modeToggle">🌓</button>
+    </div>
+  </div>
+  
+  <div class="chat-container" id="chat">
+    <div class="info-panel">
+      <strong>About Great AI:</strong><br>
+      • Version: 1.0 (Final Release)<br>
+      • Status: <span id="status">Online</span><br>
+      • Developer: <strong>Great Mayuku</strong> (Owner & CEO of Evolutional Tech)<br>
+      • Support: <a href="https://wa.me/2348087253512" style="color: #25D366;">WhatsApp +2348087253512</a><br>
+      • Founded: 2025<br>
+      • Capabilities: Text, Utilities<br>
+    </div>
+    <div class="api-selector">
+      <span>AI Mode:</span>
+      <select id="apiSelector">
+        <option value="offline">Offline AI</option>
+        <option value="greatai" selected>Great AI</option>
+      </select>
+    </div>
+    <div class="utility-buttons">
+      <button class="utility-btn" id="clearBtn">Clear Chat</button>
+      <button class="utility-btn" id="saveBtn">Save Chat</button>
+      <button class="utility-btn" id="jokeBtn">Tell a Joke</button>
+      <button class="utility-btn" id="quoteBtn">Random Quote</button>
+      <button class="utility-btn" id="calcBtn">Calculator</button>
+      <button class="utility-btn" id="personalityBtn">Change Personality</button>
+    </div>
+  </div>
+  
+  <div class="input-area">
+    <input type="text" id="userInput" placeholder="Ask Great AI..." onkeypress="if(event.key === 'Enter') sendMessage()">
+    <button onclick="sendMessage()">Send</button>
+  </div>
+</body>
+</html>
